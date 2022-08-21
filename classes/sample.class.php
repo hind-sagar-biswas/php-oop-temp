@@ -3,7 +3,7 @@
 class Sample {
   private $value = "Sample Content";
   
-  public function() {
-    echo $this->value;
+  public function getContent() {
+    return $this->value;
   }
 }
