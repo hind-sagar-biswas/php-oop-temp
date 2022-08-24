@@ -24,10 +24,12 @@ class Dbh {
     try {
       $mysqli = new mysqli($this->host, $this->user, $this->pass, $this->db);
       $mysqli->set_charset("utf8mb4");
+
+      return $mysqli;
     }
     catch(Exception $e) {
-      error_log($e->getMessage());
-      exit('Error connecting to database');
+      print "ERROR!: " . $e->getMessage() . "<BR>";
+      die();
     }
   }
 
